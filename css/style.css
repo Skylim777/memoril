@@ -44,6 +44,8 @@
   --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-top: env(safe-area-inset-top, 0px);
+}
 }
 
 /* --- RESET & BASICS --- */
@@ -104,7 +106,7 @@ body {
 
 /* --- LAYOUT STRUCTURE --- */
 header {
-  padding: 20px 24px;
+  padding: calc(20px + var(--safe-area-top)) 24px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -190,7 +192,7 @@ main {
   }
   header {
     justify-content: center;
-    padding: 16px;
+    padding: calc(16px + var(--safe-area-top)) 16px 16px;
   }
   .navbar-nav {
     position: fixed;
